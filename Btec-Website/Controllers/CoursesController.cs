@@ -54,7 +54,7 @@ namespace Btec_Website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description")] Course course)
+        public async Task<IActionResult> Create([Bind("Name,Description")] Course course)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Btec_Website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("Name,Description")] Course course)
         {
             if (id != course.Id)
             {
