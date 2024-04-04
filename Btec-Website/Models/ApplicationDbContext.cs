@@ -1,9 +1,7 @@
-﻿
-using Btec_Website.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Btec_Website.Models.Btec_Website.Models;
 
-namespace Btec_Website
+namespace Btec_Website.Models
 {
 
     public class ApplicationDbContext : DbContext
@@ -16,7 +14,6 @@ namespace Btec_Website
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Course> Courses { get; set; }
-        public DbSet<Btec_Website.Models.Btec_Website.Models.Subject> Subject { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
