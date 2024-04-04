@@ -1,8 +1,6 @@
-﻿
-using Btec_Website.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Btec_Website
+namespace Btec_Website.Models
 {
 
     public class ApplicationDbContext : DbContext
@@ -16,14 +14,12 @@ namespace Btec_Website
         public DbSet<Course> Courses { get; set; }
 
         string ConnectionString =
-        "Server=SUGOI-UWU\\SQLEXPRESS01;Database=BTEC;"
-        +
-        "Integrated Security=true;TrustServerCertificate=true;";
+        "Data Source=RUFUS\\SQLEXPRESS;Initial Catalog=SMS;Integrated Security=True;Trust Server Certificate=True";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Configure the database provider and connection string
-           // optionsBuilder.UseSqlServer("your_connection_string_here");
+            // optionsBuilder.UseSqlServer("your_connection_string_here");
 
             optionsBuilder.UseSqlServer(ConnectionString);
         }
@@ -34,6 +30,10 @@ namespace Btec_Website
 
             // Other entity configurations
         }
-      
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+         : base(options)
+        {
+        }
     }
 }
