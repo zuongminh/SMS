@@ -12,6 +12,8 @@
             public int CourseId { get; set; } // Foreign key
 
             public Course Course { get; set; } // Navigation property
+
+            public ICollection<Subject> Subjects { get; set; }
         }
     }
 }
